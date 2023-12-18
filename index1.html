@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel&family=Kanit&family=Quicksand&family=Roboto&family=Russo+One&family=Teko&family=Vina+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style1.css">
+    <title>weather</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <h1 class="text-light text-center"><i style="color: white; margin-top: 100px;" class="fa-solid fa-cloud-sun"></i> Z - Weather</h1>
+            <div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="main-div ps-5 pe-5 pt-4 pb-4 rounded-5">
+                            <div class="weather-box border border-light rounded-4">
+                                <div class="d-flex justify-content-center">
+                                    <input type="text" id="input" class="form-control w-75 mt-3 text-center" placeholder="Enter Your City">
+                                    <input onclick="search()" type="button" value="search" class="btn btn-success h-75 ms-3 mt-3">
+                                </div>
+                                <div class="row">
+                                        <div  class=" col-lg-6 mt-4">
+        
+                                                <div class="row d-flex justify-content-evenly">
+                                                    <div class="col-lg-6">
+                                                        <img class="w-100 p-3" id="image">
+                                                    </div>
+        
+                                                    <div class="col-lg-6">
+                                                        <p  class="me-3" style="font-size: 20px; color: white;">Temperature</p>
+                                                        <div class="d-flex">
+                                                            <p style="font-size: 25px; color: white;">Min:</p>
+                                                            <p class="ms-3" style="font-size: 25px; color: white;">Max:</p>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <p style="font-size: 25px; color: white;" id="mintem"></p>
+                                                            <p class="ms-3" style="font-size: 25px; color: white;" id="maxtem"></p>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="row d-flex justify-content-evenly">
+                                                    <div class="col-lg-6 text-center">
+                                                        <p style="font-size: 20px; color: white;">Sunrise:</p>
+                                                        <p style="font-size: 20px; color: white;" id="sunr"></p>
+                                                        <p class="ms-3" style="font-size: 20px; color: white;">Time</p>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <p style="font-size: 20px; color: white;">Sunset:</p>
+                                                        <p style="font-size: 20px; color: white;" id="suns"></p>
+
+                                                        <p style=" color: white;" id="tume"></p>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                       
+                                       
+                                        <div class="col-lg-6 d-flex">
+                                            <div style="margin-top: 15px; width: 1px; background-color: white; height: 90%;"></div>
+                                            <div class="row">
+                                                <p class="mt-4 ms-3" style="font-size: 20px; color: white;">Weather Details</p>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <p class="ms-3" style="font-size: 20px; color: white;" id="wdm"></p>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <p class="ms-3" style="font-size: 20px; color: white;" id="wdd"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <p class="ms-3" style="font-size: 20px; color: white;">Country</p>
+                                                    <p class="ms-3" style="font-size: 20px; color: white;">Humidity</p>
+                                                    <p class="ms-3" style="font-size: 20px; color: white;">Wind</p>
+                                                    <p class="ms-3" style="font-size: 20px; color: white;">Pressure</p>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <p class="ms-3" style="font-size: 20px; color: white;" id="count"></p>
+                                                    <p class="ms-3" style="font-size: 20px; color: white;" id="humi"></p>
+                                                    <p class="ms-3" style="font-size: 20px; color: white;" id="wins"></p>
+                                                    <p class="ms-3" style="font-size: 20px; color: white;" id="pres"></p>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</body>
+<script>
+     const search=async()=>{
+        city_name=input.value
+        /* console.log(city_name); */
+        const res =await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=fdf392029656d0f9f0039cfebafa336f`)
+        console.log(res);
+        res.json().then((weatherdata)=>{console.log(weatherdata)
+
+            //date
+
+            let dt = weatherdata.dt
+            let timezone = weatherdata.timezone
+            const d = new Date((dt - timezone) * 1000)
+            let timee= d.toGMTString() 
+            console.log(timee);
+            tume.innerHTML=timee
+                        
+            //min temparature
+            let mintemparature=weatherdata.main.temp_min
+            mit=Math.round(mintemparature-273.15)
+            minimumt=`${mit}°c`
+            console.log(minimumt);
+            mintem.innerHTML=minimumt
+            //max temp
+            let maxtemparature=weatherdata.main.temp_max
+            mat=Math.round(maxtemparature-273.15)
+            maximumt=`${mat}°c`
+            console.log(maximumt);
+            maxtem.innerHTML=maximumt
+            //pressure
+            let pre =weatherdata.main.pressure
+            console.log(pre);
+            pres.innerHTML=`${pre}`
+            //humidity
+            let hum =weatherdata.main.humidity
+            console.log(hum);
+            humi.innerHTML=`${hum}`
+            //wind
+            let win=weatherdata.wind.speed
+            console.log(win);
+            wins.innerHTML=`${win}`
+
+            //country
+            let country = weatherdata.sys.country
+            console.log(country);
+            count.innerHTML = country
+
+            //sunrise
+            let sur=weatherdata.sys.sunrise
+            let sr=new Date(sur*1000)
+            surise=sr.toLocaleTimeString()
+            console.log(surise);
+            sunr.innerHTML=`${surise}`
+            //sunset
+            let sus=weatherdata.sys.sunset
+            let ss=new Date(sus*1000)
+            suset=ss.toLocaleTimeString()
+            console.log(suset);
+            suns.innerHTML=`${suset}`
+            //date
+            let tim=weatherdata.timezone
+            console.log(tim);
+            //description
+            atmosphere=weatherdata.weather
+            a= atmosphere.map((item)=>item.main)
+            wdm.innerHTML=a
+            desc= atmosphere.map((item)=>item.description)
+            wdd.innerHTML=desc
+            weather_des = desc[0]
+
+                        // alert(a[0])
+                        if(a[0] == 'Clouds')
+                        {
+
+                            if(weather_des == 'overcast clouds')
+                            {
+                                image.src='https://cdn.icon-icons.com/icons2/2453/PNG/512/cloud_cloudy_overcast_clouds_weather_icon_148923.png'
+                            }
+                            else if(weather_des == 'broken clouds')
+                            {
+                                image.src="https://static.thenounproject.com/png/2429843-200.png"
+                            }
+                            else if(weather_des == 'few clouds')
+                            {
+                                image.src="https://www.freeiconspng.com/thumbs/cloud-icon/cloud-icon-8.png"
+                            }
+                            else if(weather_des == 'scattered clouds')
+                            {
+                                image.src="https://static.thenounproject.com/png/40765-200.png"
+                            }
+                            else
+                            {
+                            
+                                image.src="https://cdn-icons-png.flaticon.com/512/414/414825.png"
+                            }
+
+                            
+                        }
+                        else if(a[0] == 'Rain')
+                        {
+
+                            image.src="https://cdn-icons-png.flaticon.com/512/116/116251.png"
+                        }
+
+                        else if(a[0] == 'Haze')
+                        {
+
+                            image.src="https://cdn-icons-png.flaticon.com/512/5337/5337928.png"
+                        }
+                        else if(a[0] == 'Clear')
+                        {
+                            image.src="https://cdn-icons-png.flaticon.com/512/3222/3222807.png"
+                        }
+
+                        else if(a[0] == 'Mist')
+                        {
+                            image.src="https://cdn-icons-png.flaticon.com/512/1197/1197102.png"
+                        }
+                        else
+                        {
+                            
+                            image.src="https://cdn-icons-png.flaticon.com/512/3222/3222691.png"
+                        }
+        })
+    }
+</script>
+</html>
